@@ -899,6 +899,11 @@ h1, h2, h3 {
   flex: none;
 }
 
+.logos-row--wrap {
+  flex-wrap: wrap;
+  row-gap: 28px;
+}
+
 @media (max-width: 700px) {
   .logos-row {
     flex-wrap: wrap;
