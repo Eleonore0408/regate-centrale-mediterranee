@@ -67,6 +67,7 @@ if (editionTabs.length) {
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
 const lightboxClose = document.getElementById("lightboxClose");
+const lightboxDownload = document.getElementById("lightboxDownload");
 const galleryImages = document.querySelectorAll(".gallery-grid img");
 
 if (lightbox && galleryImages.length) {
@@ -77,9 +78,15 @@ if (lightbox && galleryImages.length) {
 
   galleryImages.forEach((img) => {
     img.addEventListener("click", () => {
-      lightboxImg.src = img.getAttribute("data-full") || img.src;
+      const fullSrc = img.getAttribute("data-full") || img.src;
+      lightboxImg.src = fullSrc;
       lightboxImg.alt = img.alt;
       lightbox.classList.add("open");
+
+      if (lightboxDownload) {
+        lightboxDownload.href = fullSrc;
+        lightboxDownload.setAttribute("download", fullSrc.split("/").pop());
+      }
     });
   });
 
