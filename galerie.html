@@ -61,12 +61,24 @@
   </main>
 
   <div class="lightbox-overlay" id="lightbox">
-    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer">&times;</button>
+    <div class="lightbox-actions">
+      <a id="lightboxDownload" class="lightbox-icon-btn" href="" download aria-label="Télécharger la photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+      </a>
+      <button type="button" class="lightbox-icon-btn" id="lightboxClose" aria-label="Fermer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Photo précédente">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+
     <img id="lightboxImg" src="" alt="">
-    <a id="lightboxDownload" class="lightbox-download" href="" download>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
-      Télécharger la photo
-    </a>
+
+    <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Photo suivante">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
   </div>
 
   <footer class="site-footer">
