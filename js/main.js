@@ -44,3 +44,50 @@ if (countdownEl) {
   updateCountdown();
   timer = setInterval(updateCountdown, 1000);
 }
+// Galerie -- onglets par edition
+const editionTabs = document.querySelectorAll(".edition-tab");
+const editionPanels = document.querySelectorAll(".edition-panel");
+
+if (editionTabs.length) {
+  editionTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const edition = tab.getAttribute("data-edition");
+
+      editionTabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      editionPanels.forEach((panel) => {
+        panel.classList.toggle("active", panel.getAttribute("data-edition") === edition);
+      });
+    });
+  });
+}
+
+// Galerie -- lightbox
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const lightboxClose = document.getElementById("lightboxClose");
+const galleryImages = document.querySelectorAll(".gallery-grid img");
+
+if (lightbox && galleryImages.length) {
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightboxImg.src = "";
+  }
+
+  galleryImages.forEach((img) => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.getAttribute("data-full") || img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add("open");
+    });
+  });
+
+  lightboxClose.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+  });
+}
