@@ -63,6 +63,34 @@ if (editionTabs.length) {
   });
 }
 
+// Galerie -- afficher les photos petit a petit (bouton "Voir plus")
+document.querySelectorAll(".gallery-grid[data-initial]").forEach((grid) => {
+  const images = Array.from(grid.querySelectorAll("img"));
+  const step = parseInt(grid.dataset.step, 10) || 24;
+  const button = grid.parentElement.querySelector(".gallery-more");
+  let visible = parseInt(grid.dataset.initial, 10) || 12;
+
+  function render() {
+    images.forEach((img, i) => img.classList.toggle("is-hidden", i >= visible));
+    const remaining = images.length - visible;
+    if (!button) return;
+    if (remaining > 0) {
+      button.hidden = false;
+      button.textContent = "Voir plus de photos (" + remaining + " restantes)";
+    } else {
+      button.hidden = true;
+    }
+  }
+
+  if (button) {
+    button.addEventListener("click", () => {
+      visible += step;
+      render();
+    });
+  }
+  render();
+});
+
 // Galerie -- lightbox avec navigation clavier/fleches
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");

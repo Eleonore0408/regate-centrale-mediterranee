@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://regate-centrale-mediterranee.fr/sitemap.xml
