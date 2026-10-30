@@ -156,3 +156,38 @@ if (lightbox && galleryGrids.length) {
     if (e.key === "ArrowRight") showLightboxImage(currentImageIndex + 1);
   });
 }
+
+// Logo RCM -- clic sur le logo du menu = affichage du logo original en grand
+const brandLogo = document.querySelector(".brand-logo");
+
+if (brandLogo) {
+  const logoModal = document.createElement("div");
+  logoModal.className = "logo-modal";
+  logoModal.setAttribute("role", "dialog");
+  logoModal.setAttribute("aria-label", "Logo de la Régate Centrale Méditerranée");
+  logoModal.innerHTML =
+    '<button type="button" class="logo-modal-close" aria-label="Fermer">&times;</button>' +
+    '<img alt="Logo Régate Centrale Méditerranée">';
+  document.body.appendChild(logoModal);
+
+  const logoModalImg = logoModal.querySelector("img");
+
+  function openLogo(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    logoModalImg.src = brandLogo.getAttribute("data-full") || brandLogo.src;
+    logoModal.classList.add("open");
+  }
+
+  function closeLogo() {
+    logoModal.classList.remove("open");
+  }
+
+  brandLogo.addEventListener("click", openLogo);
+  logoModal.addEventListener("click", (e) => {
+    if (e.target !== logoModalImg) closeLogo();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLogo();
+  });
+}

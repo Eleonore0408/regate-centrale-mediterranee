@@ -89,6 +89,69 @@ h1, h2, h3 {
   height: 40px;
   flex: none;
   object-fit: contain;
+  cursor: zoom-in;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.brand-logo:hover {
+  transform: scale(1.12);
+}
+
+/* ===== Logo en grand (au clic sur le logo du menu) ===== */
+.logo-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 20, 0.88);
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  cursor: zoom-out;
+}
+
+.logo-modal.open {
+  display: flex;
+  animation: logo-fade 0.2s ease;
+}
+
+.logo-modal img {
+  width: min(80vw, 80vh, 560px);
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: logo-zoom 0.25s ease;
+  cursor: default;
+}
+
+.logo-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.logo-modal-close:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+@keyframes logo-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes logo-zoom {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 .brand-text {
