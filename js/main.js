@@ -52,12 +52,17 @@ if (editionTabs.length) {
   editionTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       const edition = tab.getAttribute("data-edition");
+      // Un 2e clic sur l'edition ouverte la referme
+      const closing = tab.classList.contains("active");
 
-      editionTabs.forEach((t) => t.classList.remove("active"));
-      tab.classList.add("active");
+      editionTabs.forEach((t) => {
+        const isOpen = !closing && t === tab;
+        t.classList.toggle("active", isOpen);
+        t.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
 
       editionPanels.forEach((panel) => {
-        panel.classList.toggle("active", panel.getAttribute("data-edition") === edition);
+        panel.classList.toggle("active", !closing && panel.getAttribute("data-edition") === edition);
       });
     });
   });
