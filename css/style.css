@@ -157,24 +157,22 @@ h1, h2, h3 {
 .brand-text {
   font-family: var(--font-subtitle);
   font-weight: 700;
-  font-size: clamp(0.72rem, 1.9vw, 1rem);
+  font-size: 1.35rem;
+  line-height: 1;
   color: var(--blue-dark);
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
+  letter-spacing: 2px;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: clamp(14px, 1.6vw, 24px);
 }
 
 .main-nav a {
   font-family: var(--font-subtitle);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--text);
   text-transform: uppercase;
@@ -1157,9 +1155,10 @@ h1, h2, h3 {
 }
 
 .site-footer .credit {
-  margin-top: 6px;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.45);
+  margin-top: 10px;
+  font-size: 0.62rem;
+  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 /* ===== Programme du week-end ===== */
@@ -1410,4 +1409,8 @@ h1, h2, h3 {
     grid-template-columns: 64px 1fr;
     gap: 40px;
   }
+}
+
+.main-nav .btn-cta {
+  padding: 9px 18px;
 }
