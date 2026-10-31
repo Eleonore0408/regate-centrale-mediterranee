@@ -155,12 +155,15 @@ h1, h2, h3 {
 }
 
 .brand-text {
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-subtitle);
   font-weight: 700;
-  font-size: 1.35rem;
-  line-height: 1;
+  font-size: 0.95rem;
+  line-height: 1.15;
   color: var(--blue-dark);
-  letter-spacing: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
   white-space: nowrap;
 }
 
