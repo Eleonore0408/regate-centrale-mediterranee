@@ -1747,13 +1747,23 @@ h1, h2, h3 {
 }
 
 .page-hero-image--res {
+  height: 480px;
+  object-position: center 80%;
+}
+
+.page-hero-image--gal {
   height: 440px;
-  object-position: center 88%;
+  object-position: center 72%;
 }
 
 @media (max-width: 780px) {
   .page-hero-image--res {
     height: 280px;
-    object-position: 45% 80%;
+    object-position: 50% 85%;
+  }
+
+  .page-hero-image--gal {
+    height: 280px;
+    object-position: 70% 72%;
   }
 }
