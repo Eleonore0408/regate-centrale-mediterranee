@@ -1745,3 +1745,15 @@ h1, h2, h3 {
     display: none;
   }
 }
+
+.page-hero-image--res {
+  height: 440px;
+  object-position: center 88%;
+}
+
+@media (max-width: 780px) {
+  .page-hero-image--res {
+    height: 280px;
+    object-position: 45% 80%;
+  }
+}
