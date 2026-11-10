@@ -1498,3 +1498,250 @@ h1, h2, h3 {
     text-align: center;
   }
 }
+
+/* ===== Résultats ===== */
+.res {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.res-title {
+  font-size: 2rem;
+  color: var(--blue-dark);
+  text-align: center;
+  margin: 24px 0 28px;
+}
+
+.podium {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.podium-step {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.podium-medal {
+  font-size: 2rem;
+}
+
+.podium-boat {
+  font-family: var(--font-subtitle);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--blue-dark);
+  margin-top: 6px;
+  line-height: 1.25;
+}
+
+.podium-pts {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 2px 0 10px;
+}
+
+.podium-block {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12px;
+  font-family: var(--font-title);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--blue-dark);
+}
+
+.podium-1 .podium-block { height: 130px; background: linear-gradient(180deg, #f2c94c, #d9a400); color: var(--text); }
+.podium-2 .podium-block { height: 95px; background: linear-gradient(180deg, #cfd6e2, #9aa6b8); color: var(--text); }
+.podium-3 .podium-block { height: 70px; background: linear-gradient(180deg, #e3a877, #b8743d); }
+
+.res-table-wrap {
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid #e3e4ee;
+}
+
+.res-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.98rem;
+}
+
+.res-table th {
+  font-family: var(--font-subtitle);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: var(--white);
+  background: var(--blue-dark);
+  padding: 12px 16px;
+}
+
+.res-table td {
+  padding: 11px 16px;
+  border-top: 1px solid #eaeaf0;
+}
+
+.res-table tbody tr:nth-child(even) {
+  background: var(--off-white);
+}
+
+.res-table td:first-child {
+  font-family: var(--font-subtitle);
+  font-weight: 700;
+  color: var(--blue-dark);
+  width: 70px;
+}
+
+.res-table tr.top3 td:nth-child(2) {
+  font-weight: 700;
+}
+
+.res-sail {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.res-pts {
+  font-family: var(--font-subtitle);
+  font-weight: 700;
+  text-align: right;
+  width: 90px;
+}
+
+.res-table th:last-child {
+  text-align: right;
+}
+
+.res-note {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 12px 4px 20px;
+}
+
+.res-dl-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.res-dl {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-subtitle);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--blue-dark);
+  border: 2px solid var(--blue-dark);
+  border-radius: 999px;
+  padding: 9px 16px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.res-dl:hover {
+  background: var(--blue-dark);
+  color: var(--white);
+}
+
+.res-dl svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
+.race-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.race-card {
+  background: var(--off-white);
+  border-radius: 14px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.race-card header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--blue-dark);
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.race-card h3 {
+  font-size: 1.4rem;
+  color: var(--blue-dark);
+}
+
+.race-card header span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.race-card ol {
+  margin-bottom: 14px;
+  flex: 1;
+}
+
+.race-card li {
+  display: flex;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 0.98rem;
+}
+
+.race-card .res-dl {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  padding: 7px 14px;
+}
+
+@media (max-width: 600px) {
+  .podium {
+    gap: 6px;
+  }
+
+  .podium-boat {
+    font-size: 0.8rem;
+  }
+
+  .podium-medal {
+    font-size: 1.6rem;
+  }
+
+  .res-table td,
+  .res-table th {
+    padding: 10px 10px;
+  }
+
+  .res-sail {
+    display: none;
+  }
+
+  .res-table th:nth-child(3) {
+    display: none;
+  }
+}
