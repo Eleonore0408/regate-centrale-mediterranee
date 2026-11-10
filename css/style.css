@@ -1767,3 +1767,22 @@ h1, h2, h3 {
     object-position: 70% 72%;
   }
 }
+
+/* Résultats : sous-titre en bas du bandeau */
+.page-hero--res .page-hero-content p {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 28px;
+  max-width: none;
+  font-family: var(--font-subtitle);
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 780px) {
+  .page-hero--res .page-hero-content p {
+    bottom: 16px;
+    font-size: 0.78rem;
+  }
+}
